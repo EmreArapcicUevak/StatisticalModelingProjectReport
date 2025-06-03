@@ -175,6 +175,13 @@
 					\item \textbf{Alternative Hypothesis ($H_a$):} The average wait time is not the same during rush and non-rush hours. ($\mu_{\text{rush}} \neq \mu_{\text{non-rush}}$)
 			\end{itemize}
 
+		\subsection{Tram type distribution by time of day}
+			\label{sec:tram_type_distribution_hypothesis}
+			\begin{itemize}
+					\item \textbf{Null Hypothesis ($H_0$):} The time of day does not significantly affect the distribution of tram types.
+					\item \textbf{Alternative Hypothesis ($H_a$):} The time of day significantly affects the distribution of tram types.
+			\end{itemize}
+
 	\section{Data Description and Assumptions}
 
 		\begin{spacing}{1.2}
@@ -441,6 +448,35 @@
 			\noindent Since the p-value \( 0.964 \) is greater than our significance level \( \alpha = 0.05 \), 
 			we \textbf{fail} to reject the null hypothesis $H_0$ and conclude that there is no significant difference in average
 			wait times between rush and non-rush hours.
+
+		\subsection{Tram Type Distribution by Time of Day}
+			\noindent To test the hypothesis regarding the distribution of tram types by time of day, 
+			we used a \textbf{Chi-Squared Test for Independence}. \\
+
+			\noindent As mentioned in Section~\ref{sec:tram_type_distribution_hypothesis}, 
+			our null hypothesis is that the time of day does not significantly affect the distribution of tram types. \\
+
+			\noindent The null and alternative hypotheses can be stated as:
+			\begin{align*}
+				H_0: \text{Time of day} &\text{ does not affect tram type distribution} \\
+				H_a: \text{Time of day} &\text{ affects tram type distribution}
+			\end{align*}
+
+			\noindent We will also pick a significance level of \( \alpha = 0.05 \) for our test. \\
+
+			After performing the Chi-Squared Test for Independence these are the values we got:
+			\begin{itemize}
+				\item \textbf{Chi-Squared Statistic:} \( \chi^2 = 0.264 \)
+				\item \textbf{p-value:} \( p = 0.607 \)
+				\item \textbf{Degrees of Freedom:} \( df = 1 \)
+			\end{itemize}
+
+			\vspace{1mm}
+			\noindent Since the p-value \( 0.607 \) is greater than our significance level \( \alpha = 0.05 \), 
+			we \textbf{fail} to reject the null hypothesis $H_0$ and conclude that the time of day does not 
+			significantly affect the distribution of tram types. \\
+
+	\newpage
 	\begin{appendices}
 		\section{CSV Dataset Contents}
 		\label{sec:rawdata}
@@ -499,6 +535,10 @@
 			\newpage
 			\subsection*{Average Wait Time: Rush vs. Non-Rush Hours}
 				\lstinputlisting[style=pythonstyle, caption={Rush vs Non-Rush Wait Time Test Code}, label={lst:rush_vs_non_rush}]{Code/AverageWaitTimeRushVsNonRush.py}
+
+			\newpage
+			\subsection*{Tram Type Distribution by Time of Day}
+				\lstinputlisting[style=pythonstyle, caption={Tram Type Distribution Test Code}, label={lst:tram_type_distribution}]{Code/TramTypeDistributionTest.py}
 	\end{appendices}
 
 \end{document}
