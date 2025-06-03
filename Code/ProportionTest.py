@@ -23,9 +23,9 @@ def label_rush_hour(timestamp):
 df['rush_hour'] = df['timestamp'].apply(label_rush_hour)
 
 # --- test 1: one-sample proportion test ---
-# claim: “the proportion of new trams is 50%.”
-# H₀: p = 0.50
-# H₁: p ≠ 0.50
+# claim: "the proportion of new trams is 50%."
+# H0: p = 0.50
+# H1: p != 0.50
 
 n_total = len(df)
 n_new = len(df[df['tram_type'] == "New"])
