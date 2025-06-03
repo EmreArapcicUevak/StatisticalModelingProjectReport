@@ -41,6 +41,8 @@
 \usepackage{subcaption}
 \usepackage{minted}
 \usepackage{listings}
+\usepackage{media9}
+\usepackage{qrcode}
 
 \definecolor{lightgray}{gray}{0.95}
 \renewcommand{\arraystretch}{1.3}
@@ -182,6 +184,7 @@
 					\item \textbf{Alternative Hypothesis ($H_a$):} The time of day significantly affects the distribution of tram types.
 			\end{itemize}
 
+	\newpage
 	\section{Data Description and Assumptions}
 
 		\begin{spacing}{1.2}
@@ -216,6 +219,7 @@
 
 				\noindent The raw data table containing all measurements is provided in \textbf{Appendix~\ref{sec:rawdata}}.
 
+	\newpage
 	\section{Descriptive Statistics and Visualizations}
 		\subsection{Wait Time Distribution}
 				To get a better understanding of the tram wait times,
@@ -232,8 +236,6 @@
 				\noindent We also marked the expected wait time of 4 minutes on the histogram to see if it is a reasonable estimate.
 				And shockingly it is, even with all of the extreme values that we have because of the rush hour trams. \\
 			
-				\newpage
-
 		\subsection{Wait Time Boxplot}
 				To further analyze the tram wait times, we created two boxplot to visualize the distribution of wait times with respect
 				to the type of the tram during rush hours and non-rush hours (Figure~\ref{fig:wait_time_by_tram_type}), 
@@ -279,7 +281,6 @@
 				the new trams and the old trams had a similar number of outliers, 
 				but the new trams had \textbf{smaller outliers} than the old trams, especially during rush hours. \\
 
-		\newpage
 		\subsection{Tram Proportion}
 				\noindent Another things we focused on was the proportion of old vs. new trams during rush hours and non-rush hours. \\
 
@@ -476,6 +477,65 @@
 			we \textbf{fail} to reject the null hypothesis $H_0$ and conclude that the time of day does not 
 			significantly affect the distribution of tram types. \\
 
+	
+	\newpage
+	\section{Discussion and Intrepretation}
+		\noindent In this section, we will discuss the results of our statistical analysis and what they mean in the context of our hypotheses. \\
+
+		\subsection{Proportion of Old vs. New Trams}
+			\noindent The one-sample proportion z-test showed that there is no significant difference in the proportion of old vs. 
+			new trams during rush and non-rush hours. 
+			This suggests that the tram company is maintaining a consistent fleet composition across different times of day,
+			which is a positive finding for accessibility. \\
+
+			\noindent This came as a surprise to us, as we expected that the proportion of new trams would be smaller
+			because of personal experience and talking to people in wheelchairs whose claims suggest that they spent a 
+			longer time waiting for a tram. \\
+
+			\noindent This made us then consider the posiblility that the distribution of trams was different during 
+			rush hours and non-rush hours, which is why we then performed the Chi-Squared Test for Independence.
+
+		\subsection{Average Tram Wait Time (Overall)}
+			\noindent The one-sample t-test indicated that the average tram wait time is not significantly different from 4 minutes. 
+			This supports the tram company's claim, although it is important to note that this average may mask variability during peak times. \\
+
+		\subsection{Tram Type Distribution by Time of Day}
+			\noindent The Chi-Squared Test for Independence showed no significant relationship between time of day and tram type distribution. 
+			This indicates that the tram company does not prioritize deploying newer, more accessible trams during peak hours, which could be an area for improvement.
+
+			\noindent Another interesting implication of this finding is that the increased wait time people in wheelchairs reported,
+			did not come from the fact that there were less new trams during rush hours.
+
+		\subsection{Average Wait Time: Rush vs. Non-Rush Hours}
+			\noindent The two-sample t-test revealed no significant difference in average wait times between rush and non-rush hours. 
+			This suggests that the tram service is relatively consistent throughout the day, which is a positive finding for commuters. \\
+
+			\noindent However, it is important to note that while the average wait times are similar, 
+			the variability in wait times during rush hours may still impact passenger experience, 
+			especially for those with mobility impairments. \\
+
+		\subsection{Conclusion}
+			\noindent With all that was said we weren't that satisfied with the results, we wanted to find out why people in general,
+			not just people in wheelchairs, felt like the wait times were longer than 4 minutes. \\
+
+			\noindent When we did a more in-depth analysis of the wait times, we thought back of the box plots
+			in Figure~\ref{fig:wait_time_boxplots} and realized that the there might be something to the claims of longer wait times. \\
+
+			\noindent We found out that during rush hours whilst there were less outliers the outliers that we got were much bigger.
+			What ended up happening is that during rush hours trams would pile up one behind the other, 
+			and then when the first tram finally broke off from the traffic jam, it had around 1-4 trams behind it comming shortly after
+			it as can be seen in Figure~\ref{fig:wait_time_distribution} by big spikes of trams in the first two bins. \\
+
+			\noindent We will now show one video that was taken during rush hours infront of the 
+			\href{https://maps.app.goo.gl/yeKMiUabPfgh9Tr18}{Faculty of Philosophy, University of Sarajevo} which shows the trams piling up one behind the other all waiting
+			in the same spot due to a traffic jam. \\
+
+			\begin{figure}[h!]
+				\centering
+				\href{https://github.com/EmreArapcicUevak/StatisticalModelingProjectReport}{\qrcode[height=.4\textwidth]{https://github.com/EmreArapcicUevak/StatisticalModelingProjectReport}}
+				\caption{Video of Trams Piling Up During Rush Hours}
+				\label{fig:video_of_trams_piling_up}
+			\end{figure}
 	\newpage
 	\begin{appendices}
 		\section{CSV Dataset Contents}
