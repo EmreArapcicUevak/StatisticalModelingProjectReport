@@ -414,6 +414,33 @@
 			\noindent We fail to reject the null hypothesis $H_0$ since the p-value \( 0.177 \) is greater than our 
 			significance level \( \alpha = 0.05 \). \\
 
+		\subsection{Average Wait Time: Rush vs. Non-Rush Hours}
+			\noindent To test the hypothesis regarding the average wait time during rush hours vs. non-rush hours, 
+			we used a \textbf{two-sample t-test}. \\
+
+			\noindent As mentioned in Section~\ref{sec:wait_time_rush_non_rush_hypothesis}, 
+			our null hypothesis is that the average wait time is the same during rush and non-rush hours. \\
+
+			\noindent The null and alternative hypotheses can be stated as:
+			\begin{align*}
+				H_0: \mu_{\text{rush}} &= \mu_{\text{non-rush}} \\
+				H_a: \mu_{\text{rush}} &\neq \mu_{\text{non-rush}}
+			\end{align*}
+
+			\noindent We will also pick a significance level of \( \alpha = 0.05 \) for our test. \\
+
+			After performing the two-sample t-test these are the values we got:
+			\begin{itemize}
+				\item \textbf{Rush Hour Mean:} \( \bar{x}_{\text{rush}} = 4.406 \)
+				\item \textbf{Non-Rush Hour Mean:} \( \bar{x}_{\text{non-rush}} = 4.434 \)
+				\item \textbf{T-Statistic:} \( T = -0.045 \)
+				\item \textbf{p-value:} \( p = 0.964 \)
+			\end{itemize}
+
+			\vspace{1mm}
+			\noindent Since the p-value \( 0.964 \) is greater than our significance level \( \alpha = 0.05 \), 
+			we \textbf{fail} to reject the null hypothesis $H_0$ and conclude that there is no significant difference in average
+			wait times between rush and non-rush hours.
 	\begin{appendices}
 		\section{CSV Dataset Contents}
 		\label{sec:rawdata}
@@ -465,9 +492,13 @@
 			\subsection*{Proportion of Old vs. New Trams}
 				\lstinputlisting[style=pythonstyle, caption={Proportion Test Code}, label={lst:power_curve}]{Code/ProportionTest.py}	
 
+			\newpage
 			\subsection*{Average Tram Wait Time (Overall)}
 				\lstinputlisting[style=pythonstyle, caption={Average Wait Time Test Code}, label={lst:average_wait_time}]{Code/AverageWaitTimeOverallTest.py}
 
+			\newpage
+			\subsection*{Average Wait Time: Rush vs. Non-Rush Hours}
+				\lstinputlisting[style=pythonstyle, caption={Rush vs Non-Rush Wait Time Test Code}, label={lst:rush_vs_non_rush}]{Code/AverageWaitTimeRushVsNonRush.py}
 	\end{appendices}
 
 \end{document}
