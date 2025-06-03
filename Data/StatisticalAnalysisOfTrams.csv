@@ -1,0 +1,136 @@
+Tram ID,Station,Direction,Tram Type,Timestamp,Wait Time (s),Time Slot
+REF,Marijin Dvor,Basčaršija-Ilidža,,9.5.2025. 11:33:07,N/A,Off-peak
+TRAM1,Marijin Dvor,Basčaršija-Ilidža,New,9.5.2025. 11:36:41,214,Off-peak
+TRAM2,Marijin Dvor,Basčaršija-Ilidža,Old,9.5.2025. 11:37:02,21,Off-peak
+TRAM3,Marijin Dvor,Basčaršija-Ilidža,Old,9.5.2025. 11:51:08,846,Off-peak
+TRAM4,Marijin Dvor,Basčaršija-Ilidža,Old,9.5.2025. 11:53:54,166,Off-peak
+REF,Marijin Dvor,Ilidža-Baščaršija,,9.5.2025. 11:53:12,N/A,Off-peak
+TRAM5,Marijin Dvor,Ilidža-Baščaršija,Old,9.5.2025. 11:56:35,203,Off-peak
+TRAM6,Marijin Dvor,Ilidža-Baščaršija,Old,9.5.2025. 11:59:20,165,Off-peak
+TRAM7,Marijin Dvor,Ilidža-Baščaršija,New,9.5.2025. 12:03:12,232,Off-peak
+TRAM8,Marijin Dvor,Ilidža-Baščaršija,Old,9.5.2025. 12:04:05,53,Off-peak
+TRAM9,Marijin Dvor,Basčaršija-Ilidža,New,9.5.2025. 12:08:47,893,Off-peak
+TRAM10,Marijin Dvor,Ilidža-Baščaršija,New,9.5.2025. 12:11:38,453,Off-peak
+TRAM11,Marijin Dvor,Basčaršija-Ilidža,Old,9.5.2025. 12:12:33,226,Off-peak
+REF,Marijin Dvor,Basčaršija-Ilidža,,14.5.2025. 09:28:22,N/A,Off-peak
+TRAM12,Marijin Dvor,Basčaršija-Ilidža,Old,14.5.2025. 09:32:36,254,Off-peak
+TRAM13,Marijin Dvor,Basčaršija-Ilidža,Old,14.5.2025. 09:41:18,522,Off-peak
+REF,Marijin Dvor,Basčaršija-Ilidža,,14.5.2025. 11:05:39,N/A,Off-peak
+TRAM14,Marijin Dvor,Basčaršija-Ilidža,New,14.5.2025. 11:08:54,195,Off-peak
+TRAM15,Marijin Dvor,Basčaršija-Ilidža,Old,14.5.2025. 11:10:17,83,Off-peak
+REF,Marijin Dvor,Ilidža-Baščaršija,,14.5.2025. 11:08:13,N/A,Off-peak
+TRAM16,Marijin Dvor,Ilidža-Baščaršija,New,14.5.2025. 11:12:25,252,Off-peak
+TRAM17,Marijin Dvor,Ilidža-Baščaršija,Old,14.5.2025. 11:18:47,382,Off-peak
+TRAM18,Marijin Dvor,Ilidža-Baščaršija,Old,14.5.2025. 11:25:06,379,Off-peak
+TRAM19,Marijin Dvor,Ilidža-Baščaršija,Old,14.5.2025. 11:31:45,399,Off-peak
+TRAM20,Marijin Dvor,Ilidža-Baščaršija,Old,14.5.2025. 11:35:28,223,Off-peak
+REF,Marijin Dvor,Ilidža-Baščaršija,,15.5.2025. 09:33:26,N/A,Off-peak
+REF,Alipašino Polje,Basčaršija-Ilidža,,15.5.2025. 09:40:09,N/A,Off-peak
+TRAM21,Alipašino Polje,Ilidža-Baščaršija,New,15.5.2025. 09:40:07,401,Off-peak
+TRAM22,Alipašino Polje,Ilidža-Baščaršija,New,15.5.2025. 09:41:37,90,Off-peak
+TRAM23,Alipašino Polje,Basčaršija-Ilidža,Old,15.5.2025. 09:44:09,240,Off-peak
+TRAM24,Alipašino Polje,Ilidža-Baščaršija,New,15.5.2025. 09:45:30,233,Off-peak
+TRAM25,Alipašino Polje,Basčaršija-Ilidža,Old,15.5.2025. 09:45:38,89,Off-peak
+TRAM26,Alipašino Polje,Ilidža-Baščaršija,New,15.5.2025. 09:48:11,161,Off-peak
+TRAM27,Alipašino Polje,Basčaršija-Ilidža,New,15.5.2025. 09:49:29,231,Off-peak
+TRAM28,Alipašino Polje,Ilidža-Baščaršija,Old,15.5.2025. 09:54:49,398,Off-peak
+TRAM29,Alipašino Polje,Ilidža-Baščaršija,Old,15.5.2025. 09:56:08,79,Off-peak
+TRAM30,Alipašino Polje,Ilidža-Baščaršija,New,15.5.2025. 10:01:36,328,Off-peak
+TRAM31,Alipašino Polje,Ilidža-Baščaršija,Old,15.5.2025. 10:02:44,68,Off-peak
+TRAM32,Alipašino Polje,Basčaršija-Ilidža,New,15.5.2025. 10:02:51,802,Off-peak
+TRAM33,Alipašino Polje,Basčaršija-Ilidža,Old,15.5.2025. 10:04:13,82,Off-peak
+TRAM34,Alipašino Polje,Ilidža-Baščaršija,New,15.5.2025. 10:11:10,506,Off-peak
+TRAM35,Alipašino Polje,Ilidža-Baščaršija,Old,15.5.2025. 10:16:12,302,Off-peak
+TRAM36,Alipašino Polje,Basčaršija-Ilidža,Old,15.5.2025. 10:17:27,794,Off-peak
+TRAM37,Alipašino Polje,Basčaršija-Ilidža,Old,15.5.2025. 10:18:53,86,Off-peak
+TRAM38,Alipašino Polje,Basčaršija-Ilidža,New,15.5.2025. 10:20:17,84,Off-peak
+TRAM39,Alipašino Polje,Basčaršija-Ilidža,Old,15.5.2025. 10:22:52,155,Off-peak
+TRAM40,Alipašino Polje,Basčaršija-Ilidža,Old,15.5.2025. 10:26:50,238,Off-peak
+REF,Marijin Dvor,Ilidža-Baščaršija,,15.5.2025. 15:51:14,N/A,Off-peak
+REF,Marijin Dvor,Basčaršija-Ilidža,,15.5.2025. 15:52:38,N/A,Off-peak
+TRAM41,Marijin Dvor,Basčaršija-Ilidža,Old,15.5.2025. 15:53:37,59,Off-peak
+TRAM42,Marijin Dvor,Basčaršija-Ilidža,New,15.5.2025. 15:57:57,260,Off-peak
+TRAM43,Marijin Dvor,Basčaršija-Ilidža,Old,15.5.2025. 16:04:25,388,Rush hour
+TRAM44,Marijin Dvor,Ilidža-Baščaršija,Old,15.5.2025. 16:10:24,1150,Rush hour
+TRAM45,Marijin Dvor,Ilidža-Baščaršija,New,15.5.2025. 16:12:31,127,Rush hour
+TRAM46,Marijin Dvor,Ilidža-Baščaršija,Old,15.5.2025. 16:13:54,83,Rush hour
+TRAM47,Marijin Dvor,Ilidža-Baščaršija,Old,15.5.2025. 16:14:51,57,Rush hour
+TRAM48,Marijin Dvor,Ilidža-Baščaršija,New,15.5.2025. 16:15:45,54,Rush hour
+TRAM49,Marijin Dvor,Basčaršija-Ilidža,New,15.5.2025. 16:17:53,808,Rush hour
+TRAM50,Marijin Dvor,Basčaršija-Ilidža,Old,15.5.2025. 16:21:44,231,Rush hour
+TRAM51,Marijin Dvor,Basčaršija-Ilidža,New,15.5.2025. 16:22:23,39,Rush hour
+TRAM52,Marijin Dvor,Ilidža-Baščaršija,Old,15.5.2025. 16:24:38,533,Rush hour
+TRAM53,Marijin Dvor,Ilidža-Baščaršija,New,15.5.2025. 16:32:19,461,Rush hour
+TRAM54,Marijin Dvor,Basčaršija-Ilidža,Old,15.5.2025. 16:26:19,236,Rush hour
+TRAM55,Marijin Dvor,Basčaršija-Ilidža,New,15.5.2025. 16:28:47,148,Rush hour
+TRAM56,Marijin Dvor,Basčaršija-Ilidža,Old,15.5.2025. 16:35:42,415,Rush hour
+TRAM57,Marijin Dvor,Basčaršija-Ilidža,New,15.5.2025. 16:37:18,96,Rush hour
+TRAM58,Marijin Dvor,Ilidža-Baščaršija,Old,15.5.2025. 16:33:47,88,Rush hour
+TRAM59,Marijin Dvor,Ilidža-Baščaršija,Old,15.5.2025. 16:39:28,341,Rush hour
+TRAM60,Marijin Dvor,Ilidža-Baščaršija,Old,15.5.2025. 16:57:15,1067,Rush hour
+REF,Alipašino Polje,Ilidža-Baščaršija,Old,20.5.2025. 17:01:27,N/A,Rush hour
+REF,Alipašino Polje,Basčaršija-Ilidža,New,20.5.2025. 17:02:54,N/A,Rush hour
+TRAM61,Alipašino Polje,Ilidža-Baščaršija,New,20.5.2025. 17:05:30,243,Rush hour
+TRAM62,Alipašino Polje,Basčaršija-Ilidža,New,20.5.2025. 17:09:46,412,Rush hour
+TRAM63,Alipašino Polje,Ilidža-Baščaršija,New,20.5.2025. 17:12:02,392,Rush hour
+TRAM64,Alipašino Polje,Ilidža-Baščaršija,New,20.5.2025. 17:13:34,92,Rush hour
+TRAM65,Alipašino Polje,Basčaršija-Ilidža,Old,20.5.2025. 17:14:55,309,Rush hour
+TRAM66,Alipašino Polje,Basčaršija-Ilidža,Old,20.5.2025. 17:16:12,77,Rush hour
+TRAM67,Alipašino Polje,Ilidža-Baščaršija,New,20.5.2025. 17:21:28,474,Rush hour
+TRAM68,Alipašino Polje,Ilidža-Baščaršija,Old,20.5.2025. 17:28:09,401,Rush hour
+TRAM69,Alipašino Polje,Ilidža-Baščaršija,Old,20.5.2025. 17:32:08,239,Rush hour
+TRAM70,Alipašino Polje,Basčaršija-Ilidža,New,20.5.2025. 17:33:24,76,Rush hour
+TRAM71,Alipašino Polje,Ilidža-Baščaršija,Old,20.5.2025. 17:33:31,83,Rush hour
+TRAM72,Alipašino Polje,Basčaršija-Ilidža,New,20.5.2025. 17:37:26,242,Rush hour
+TRAM73,Alipašino Polje,Ilidža-Baščaršija,Old,20.5.2025. 17:38:46,315,Rush hour
+TRAM74,Alipašino Polje,Basčaršija-Ilidža,Old,20.5.2025. 17:38:53,87,Rush hour
+TRAM75,Alipašino Polje,Ilidža-Baščaršija,New,20.5.2025. 17:44:04,318,Rush hour
+TRAM76,Alipašino Polje,Basčaršija-Ilidža,Old,20.5.2025. 17:44:10,317,Rush hour
+TRAM77,Alipašino Polje,Basčaršija-Ilidža,New,20.5.2025. 17:48:21,251,Rush hour
+TRAM78,Alipašino Polje,Ilidža-Baščaršija,New,20.5.2025. 17:49:48,344,Rush hour
+TRAM79,Alipašino Polje,Basčaršija-Ilidža,New,20.5.2025. 17:52:33,252,Rush hour
+TRAM80,Alipašino Polje,Basčaršija-Ilidža,Old,20.5.2025. 17:55:57,204,Rush hour
+REF,Socijalno,Basčaršija-Ilidža,,22.5.2025. 11:38:45,N/A,Off-peak
+REF,Socijalno,Basčaršija-Ilidža,,22.5.2025. 11:42:18,N/A,Off-peak
+TRAM81,Socijalno,Ilidža-Baščaršija,Old,22.5.2025. 11:42:28,223,Off-peak
+TRAM82,Socijalno,Basčaršija-Ilidža,New,22.5.2025. 11:45:47,209,Off-peak
+TRAM83,Socijalno,Ilidža-Baščaršija,New,22.5.2025. 11:47:15,287,Off-peak
+TRAM84,Socijalno,Ilidža-Baščaršija,New,22.5.2025. 11:48:44,89,Off-peak
+TRAM85,Socijalno,Basčaršija-Ilidža,Old,22.5.2025. 11:49:12,205,Off-peak
+TRAM86,Socijalno,Basčaršija-Ilidža,New,22.5.2025. 11:50:36,84,Off-peak
+TRAM87,Socijalno,Ilidža-Baščaršija,Old,22.5.2025. 11:54:31,347,Off-peak
+TRAM88,Socijalno,Basčaršija-Ilidža,Old,22.5.2025. 11:57:23,407,Off-peak
+TRAM89,Socijalno,Basčaršija-Ilidža,New,22.5.2025. 11:58:51,88,Off-peak
+TRAM90,Socijalno,Ilidža-Baščaršija,New,22.5.2025. 11:59:08,277,Off-peak
+TRAM91,Socijalno,Ilidža-Baščaršija,Old,22.5.2025. 12:00:23,75,Off-peak
+TRAM92,Socijalno,Basčaršija-Ilidža,Old,22.5.2025. 12:04:18,327,Off-peak
+TRAM93,Socijalno,Ilidža-Baščaršija,New,22.5.2025. 12:06:17,354,Off-peak
+TRAM94,Socijalno,Basčaršija-Ilidža,Old,22.5.2025. 12:08:42,264,Off-peak
+TRAM95,Socijalno,Ilidža-Baščaršija,Old,22.5.2025. 12:10:05,228,Off-peak
+TRAM96,Socijalno,Basčaršija-Ilidža,New,22.5.2025. 12:14:58,376,Off-peak
+TRAM97,Socijalno,Ilidža-Baščaršija,Old,22.5.2025. 12:15:49,344,Off-peak
+TRAM98,Socijalno,Basčaršija-Ilidža,Old,22.5.2025. 12:16:31,93,Off-peak
+TRAM99,Socijalno,Ilidža-Baščaršija,New,22.5.2025. 12:17:19,90,Off-peak
+TRAM100,Socijalno,Basčaršija-Ilidža,New,22.5.2025. 12:21:14,283,Off-peak
+REF,Socijalno,Ilidža-Baščaršija,,23.5.2025. 17:19:33,,Rush hour
+TRAM101,Socijalno,Ilidža-Baščaršija,Old,23.5.2025. 17:23:12,219,Rush hour
+REF,Socijalno,Basčaršija-Ilidža,,23.5.2025. 17:23:41,,Rush hour
+TRAM102,Socijalno,Ilidža-Baščaršija,New,23.5.2025. 17:24:38,86,Rush hour
+TRAM103,Socijalno,Basčaršija-Ilidža,New,23.5.2025. 17:27:18,217,Rush hour
+TRAM104,Socijalno,Ilidža-Baščaršija,Old,23.5.2025. 17:28:45,247,Rush hour
+TRAM105,Socijalno,Basčaršija-Ilidža,Old,23.5.2025. 17:28:49,91,Rush hour
+TRAM106,Socijalno,Ilidža-Baščaršija,New,23.5.2025. 17:32:19,214,Rush hour
+TRAM107,Socijalno,Basčaršija-Ilidža,New,23.5.2025. 17:32:41,232,Rush hour
+TRAM108,Socijalno,Ilidža-Baščaršija,New,23.5.2025. 17:33:54,95,Rush hour
+TRAM109,Socijalno,Basčaršija-Ilidža,Old,23.5.2025. 17:36:18,217,Rush hour
+TRAM110,Socijalno,Basčaršija-Ilidža,New,23.5.2025. 17:37:22,64,Rush hour
+TRAM111,Socijalno,Ilidža-Baščaršija,Old,23.5.2025. 17:38:28,274,Rush hour
+TRAM112,Socijalno,Basčaršija-Ilidža,Old,23.5.2025. 17:41:55,273,Rush hour
+TRAM113,Socijalno,Ilidža-Baščaršija,New,23.5.2025. 17:42:17,229,Rush hour
+TRAM114,Socijalno,Ilidža-Baščaršija,Old,23.5.2025. 17:43:52,95,Rush hour
+TRAM115,Socijalno,Basčaršija-Ilidža,Old,23.5.2025. 17:45:47,232,Rush hour
+TRAM116,Socijalno,Basčaršija-Ilidža,New,23.5.2025. 17:47:11,84,Rush hour
+TRAM117,Socijalno,Ilidža-Baščaršija,New,23.5.2025. 17:49:06,314,Rush hour
+TRAM118,Socijalno,Basčaršija-Ilidža,Old,23.5.2025. 17:52:38,327,Rush hour
+TRAM119,Socijalno,Ilidža-Baščaršija,Old,23.5.2025. 17:52:44,218,Rush hour
+TRAM120,Socijalno,Basčaršija-Ilidža,New,23.5.2025. 17:55:14,156,Rush hour

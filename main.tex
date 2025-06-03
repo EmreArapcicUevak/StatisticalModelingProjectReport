@@ -1,6 +1,7 @@
 \documentclass[a4paper, 10pt]{article}
 
 \usepackage[margin = 1in]{geometry} % for spacing around
+\usepackage{tabularx}
 \usepackage{graphicx} % for including images in your pdfs
 \usepackage{xcolor} % for including colors in your pdf
 \usepackage{soul} % for text decoration
@@ -30,6 +31,14 @@
 \usepackage{tcolorbox} % for adding colored text boxes
 \usepackage{bm} % Adding bold text to math inputs
 \usepackage{pgfplots} % Used for plotting functions
+\usepackage{pgfplotstable} % Used for plotting tables
+\usepackage{booktabs} % for nicer tables
+\usepackage{longtable} % for long tables that can span multiple pages
+\usepackage[toc,page]{appendix} % for adding appendices
+\usepackage{array}
+\usepackage{colortbl}
+\definecolor{lightgray}{gray}{0.95}
+\renewcommand{\arraystretch}{1.3}
 
 % Setting up the default image path
 \graphicspath{{./Images/}}
@@ -60,6 +69,11 @@
 
 % Custom commands
 
+% Custom column colors
+\definecolor{lightblue}{RGB}{220,230,255}
+\definecolor{lightgreen}{RGB}{220,255,220}
+\definecolor{lightyellow}{RGB}{255,250,210}
+\definecolor{lightpink}{RGB}{255,230,230}
 
 \begin{document}
 	\begin{titlepage}
@@ -133,4 +147,45 @@
 					\item \textbf{Alternative Hypothesis ($H_a$):} The average wait time is greater during rush hours. ($\mu_{\text{rush}} > \mu_{\text{non-rush}}$)
 			\end{itemize}
 
+	\section{Data Description and Assumptions}
+
+		\begin{spacing}{1.2}
+			To collect the data for our analysis, we conducted \textbf{direct observation} at a tram station. 
+			\noindent We waited for the \textbf{first tram to arrive} and used its departure as the \textbf{starting point} for our data collection. 
+			After the reference tram left, we started a timer and recorded the \textbf{arrival time of the next tram}. 
+			This process was repeated to collect multiple data points on tram arrival intervals. \\
+
+			\noindent It is important to note that the \textbf{reference trams} (i.e., the first trams used to start each measurement cycle) were 
+			\textbf{not included} in the dataset for average wait time calculations, but they were 
+			\textbf{included in the population proportion analysis} (e.g., counting the number of old vs. new trams). \\
+
+			\noindent We did not conduct surveys or use digital scheduling data; instead, all data was manually recorded based on real-time observations.
+		\end{spacing}
+		\subsection*{Assumptions and Limitations}
+
+		We assume that:
+		\begin{itemize}
+				\item Tram arrivals are \textbf{independent} of one another.
+				\item Our observation window is \textbf{representative} of general traffic conditions.
+				\item Our sampling method is \textbf{non-random but unbiased} in timing—we observed whatever trams happened to arrive, without prior selection.
+		\end{itemize}
+
+		\noindent However, there are a few potential \textbf{biases and limitations}:
+		\begin{itemize}
+				\item \textbf{Rush hour vs. non-rush hour} boundaries were estimated based on perception, not official schedules.
+				\item \textbf{External conditions} (e.g., traffic, weather, or delays) may have influenced tram arrivals during data collection.
+				\item Data was collected \textbf{manually}, introducing possible human error in timing or tram classification.
+		\end{itemize}
+
+		\noindent Despite these limitations, the methodology provides a solid foundation for testing the hypotheses regarding wait times and tram accessibility. \\
+
+		\noindent The raw data table containing all measurements is provided in \textbf{Appendix~\ref{sec:rawdata}}.
+
+	\appendix
+	\appendixpage 
+	\addappheadtotoc
+	\section{CSV Dataset Contents}
+	\label{sec:rawdata}
+	
+	\input{Data/StatisticalAnalysisOfTrams.tex}
 \end{document}
