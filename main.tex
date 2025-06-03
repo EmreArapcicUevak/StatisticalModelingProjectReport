@@ -300,11 +300,84 @@
 				\noindent As we can see the Cohen's $d$ value needs to be around $0.5$ in order for us to be able to reject the null 
 				hypothesis with $80\%$ confidence. \\
 
+				\noindent For more information on the power curve and how it was calculated, please refer to Appendix \ref{sec:power_analysis}.
+
 	\appendix
+	\label{sec:rawdata}
 	\appendixpage 
 	\addappheadtotoc
 	\section*{Appendix A: CSV Dataset Contents}
-	\label{sec:rawdata}
 	
 	\input{Data/StatisticalAnalysisOfTrams.tex}
+
+	\newpage
+	\appendix
+	\label{sec:power_analysis}
+	\section*{Appendix B: Power Analysis Code and Explanation}
+		\addcontentsline{toc}{section}{Appendix B: Power Analysis Code and Explanation}
+
+		\subsection*{Python Code Used for Power Curve}
+		\begin{verbatim}
+from statsmodels.stats.power import TTestIndPower
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Initialize power analysis tool
+analysis = TTestIndPower()
+
+# Significance level
+alpha = 0.05
+
+# Sample sizes from dataset
+n1 = df[df['rush_hour'] == True].shape[0]
+n2 = df[df['rush_hour'] == False].shape[0]
+
+# Effect sizes from 0 to 2 (Cohen's d)
+effect_sizes = np.linspace(0, 2, 100)
+
+# Compute statistical power for each effect size
+powers = analysis.power(effect_size=effect_sizes, nobs1=n1, ratio=n2/n1, alpha=alpha, alternative='two-sided')
+
+# Plotting the power curve
+plt.figure(figsize=(8,5))
+plt.plot(effect_sizes, powers, color='blue')
+plt.axhline(0.8, color='red', linestyle='--', label='80% power')
+plt.title('Power Curve (Type II Error Analysis)')
+plt.xlabel("Effect Size (Cohen's d)")
+plt.ylabel('Power (1 - beta)')
+plt.grid(True)
+plt.legend()
+plt.savefig("Plot_PowerCurve.pdf", format='pdf')
+plt.show()
+		\end{verbatim}
+
+		\subsection*{Explanation of Power Calculation}
+
+			The statistical power of a test is defined as:
+
+			\[
+			\text{Power} = 1 - \beta
+			\]
+
+			where:
+			\begin{itemize}
+					\item \( \beta \) is the probability of a Type II error (failing to reject the null hypothesis when it is false).
+					\item \( \alpha \) is the significance level (probability of a Type I error).
+					\item Power is the probability that the test correctly rejects the null hypothesis when a true difference exists.
+			\end{itemize}
+
+			The effect size used here is \textbf{Cohen's \( d \)}, calculated as:
+
+			\[
+			d = \frac{|\mu_1 - \mu_2|}{\sigma_{\text{pooled}}}
+			\]
+
+			with \( \mu_1 \) and \( \mu_2 \) representing the means of tram wait times during rush hour and non-rush hour respectively, and \( \sigma_{\text{pooled}} \) being the pooled standard deviation.
+
+		\subsection*{Purpose of the Power Curve}
+
+			This power curve allows us to visualize how sensitive our statistical test is to differences in tram wait times. It shows the probability of detecting a real difference (if it exists) based on various hypothetical effect sizes. A commonly accepted threshold for adequate power is 0.8, meaning there's an 80\% chance the test will detect a true effect.
+
+			\bigskip
+			The analysis helps ensure that our sample size is sufficient to make confident conclusions regarding tram service differences during rush hours.
 \end{document}
