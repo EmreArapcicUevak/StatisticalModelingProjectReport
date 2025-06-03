@@ -37,6 +37,9 @@
 \usepackage[toc,page]{appendix} % for adding appendices
 \usepackage{array}
 \usepackage{colortbl}
+\usepackage{caption}
+\usepackage{subcaption}
+
 \definecolor{lightgray}{gray}{0.95}
 \renewcommand{\arraystretch}{1.3}
 
@@ -181,10 +184,126 @@
 
 				\noindent The raw data table containing all measurements is provided in \textbf{Appendix~\ref{sec:rawdata}}.
 
+	\section{Descriptive Statistics and Visualizations}
+		\subsection{Wait Time Distribution}
+				To get a better understanding of the tram wait times,
+				we plotted the distribution of wait times using a histogram. As can be seen in figure~\ref{fig:wait_time_distribution},
+				the wait times are right-skewed, with most values clustered around 2-4 minutes.
+
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.8\textwidth]{Plot_DistributionOfWaitTimes.pdf}
+					\caption{Distribution of Tram Wait Times}
+					\label{fig:wait_time_distribution}
+				\end{figure}
+
+				\noindent We also marked the expected wait time of 4 minutes on the histogram to see if it is a reasonable estimate.
+				And shockingly it is, even with all of the extreme values that we have because of the rush hour trams. \\
+			
+				\newpage
+
+		\subsection{Wait Time Boxplot}
+				To further analyze the tram wait times, we created two boxplot to visualize the distribution of wait times with respect
+				to the type of the tram during rush hours and non-rush hours (Figure~\ref{fig:wait_time_by_tram_type}), 
+				and with respect to the time of day (Figure~\ref{fig:wait_time_by_time_of_day}). \\
+
+				\noindent The blue represents \textcolor{blue}{non rush hour} wait times, while the red 
+				represents \textcolor{red}{rush hour} wait times.
+
+				\begin{figure}[h!]
+					\centering
+					\begin{subfigure}[b]{0.48\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{Plot_WaitTimesByTramType.pdf}
+						\caption{Wait Times by Tram Type}
+						\label{fig:wait_time_by_tram_type}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}[b]{0.48\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{Plot_WaitTimesByTimeOfDay.pdf}
+						\caption{Wait Times by Time of Day}
+						\label{fig:wait_time_by_time_of_day}
+					\end{subfigure}
+						
+					\caption{Boxplot of Tram Wait Times}
+					\label{fig:wait_time_boxplots}
+				\end{figure}
+
+				\noindent The boxplots in Figure~\ref{fig:wait_time_boxplots} show that the wait times during
+				rush hours are generally \textbf{shorter} than during non-rush hours! //
+
+				\noindent However if we take a look at Figure~\ref{fig:wait_time_by_time_of_day} we will see that 
+				non rush hour, or Off-peak, wait times generally have more \textbf{outliers} than rush hour wait times, but
+				the rush hour wait times have \textbf{bigger outliers} than the non rush hour wait times. \\
+
+				\noindent This means that the rush hour wait times are more \textbf{consistent} 
+				than the non rush hour wait times, and this can also be seen by a somewhat smaller interquartile range (IQR) 
+				for the rush hour wait times. \\
+
+				\noindent If we also take a look at Figure~\ref{fig:wait_time_by_tram_type}, 
+				we can see that the wait times for the new trams are generally 
+				\textbf{shorter} than the wait times for the old trams. Also when it came to outliers, 
+				the new trams and the old trams had a similar number of outliers, 
+				but the new trams had \textbf{smaller outliers} than the old trams, especially during rush hours. \\
+
+		\newpage
+		\subsection{Tram Proportion}
+				\noindent Another things we focused on was the proportion of old vs. new trams during rush hours and non-rush hours. \\
+
+				\noindent As mentioned before in the introduction, the old trams are generally not accessible to people in wheelchairs,
+				so it is important to see how many of the new trams are running during rush hours and non-rush hours. \\
+
+				\begin{figure}[h!]
+					\centering
+					\begin{subfigure}[b]{0.48\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{Plot_TramProportions.pdf}
+						\caption{Proportion of Trams}
+						\label{fig:proportion_of_trams_by_type}
+					\end{subfigure}	
+					\hfill
+					\begin{subfigure}[b]{0.48\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{Plot_TramFrequencyByTimeOfDay.pdf}
+						\caption{Proportion of Trams by Time of Day}
+						\label{fig:proportion_of_trams_by_time_of_day}
+					\end{subfigure}
+				\end{figure}
+
+				\noindent As can be seen in Figure~\ref{fig:proportion_of_trams_by_type} there does seem to be a slight difference in 
+				the proportion of old vs. new trams during rush hours and non-rush hours, the question of if this is enough 
+				to be statistically significant is answered in the next section. \\
+
+				\noindent However if we take a look at Figure~\ref{fig:proportion_of_trams_by_time_of_day}, we can see that during
+				non rush hours the proportion of old trams is significantly higher than then the proportion of new trams, which does
+				cause a problem for people in wheelchairs, since the old trams are not accessible to them, hence causing them to 
+				have to spend a longer time waiting. \\
+
+		\newpage
+		\subsection{Power Curve}
+				\noindent Whilst the power curve doesn't give us any new information to work with, 
+				however it does give us a good idea of how likely we are to reject the null of wait time being different during
+				rush and non rush hours hypothesis correctly. \\
+
+				\noindent Specifically our power curve in Figure~\ref{fig:power_curve} 
+				will tell us to what extent the effect needs to be in order for us to be able to reject the null hypothesis with
+				$80\%$ confidence. \\
+
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.9\textwidth]{Plot_PowerCurve.pdf}
+					\caption{Power Curve for Tram Wait Time Analysis}
+					\label{fig:power_curve}	
+				\end{figure}
+
+				\noindent As we can see the Cohen's $d$ value needs to be around $0.5$ in order for us to be able to reject the null 
+				hypothesis with $80\%$ confidence. \\
+
 	\appendix
 	\appendixpage 
 	\addappheadtotoc
-	\section{CSV Dataset Contents}
+	\section*{Appendix A: CSV Dataset Contents}
 	\label{sec:rawdata}
 	
 	\input{Data/StatisticalAnalysisOfTrams.tex}
