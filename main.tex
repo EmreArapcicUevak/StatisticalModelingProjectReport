@@ -155,21 +155,31 @@
 
 	\section{Defined Hypotheses}
 		\subsection{Proportion of Old vs. New Trams}
+			\label{sec:proportion_hypothesis}
 			\begin{itemize}
 					\item \textbf{Null Hypothesis ($H_0$):} The proportion of old and new trams is the same during rush and non-rush hours. ($p_{\text{old, rush}} = p_{\text{old, non-rush}}$)
 					\item \textbf{Alternative Hypothesis ($H_a$):} The proportion of old trams is higher. ($p_{\text{old, rush}} > p_{\text{old, non-rush}}$)
 			\end{itemize}
 
 		\subsection{Average Tram Wait Time (Overall)}
+			\label{sec:wait_time_hypothesis}
 			\begin{itemize}
 					\item \textbf{Null Hypothesis ($H_0$):} The average tram wait time, in general, is 4 minutes. ($\mu_0 = 4$)
 					\item \textbf{Alternative Hypothesis ($H_a$):} The average tram wait time is not 4 minutes. ($\mu_a \neq 4$)
 			\end{itemize}
 
 		\subsection{Average Wait Time: Rush vs. Non-Rush Hours}
+			\label{sec:wait_time_rush_non_rush_hypothesis}
 			\begin{itemize}
 					\item \textbf{Null Hypothesis ($H_0$):} The average wait time is the same during rush and non-rush hours. ($\mu_{\text{rush}} = \mu_{\text{non-rush}}$)
 					\item \textbf{Alternative Hypothesis ($H_a$):} The average wait time is not the same during rush and non-rush hours. ($\mu_{\text{rush}} \neq \mu_{\text{non-rush}}$)
+			\end{itemize}
+
+		\subsection{Tram type distribution by time of day}
+			\label{sec:tram_type_distribution_hypothesis}
+			\begin{itemize}
+					\item \textbf{Null Hypothesis ($H_0$):} The time of day does not significantly affect the distribution of tram types.
+					\item \textbf{Alternative Hypothesis ($H_a$):} The time of day significantly affects the distribution of tram types.
 			\end{itemize}
 
 	\section{Data Description and Assumptions}
@@ -325,6 +335,148 @@
 				\noindent For more information on the power curve and how it was calculated, please refer to Appendix \ref{sec:power_analysis}.
 
 
+	\section{Statistical Analysis and Hypothesis Testing}
+		This Section will cover the statistical analysis and hypothesis testing we performed on the data collected. 
+		The tests were performed using Python, and the code can be found in Appendix~\ref{sec:hypothesis_test_code}. \\
+
+		\subsection{Proportion of Old vs. New Trams}
+			\noindent To test the hypothesis regarding the proportion of old vs. new trams during 
+			rush and non-rush hours, we used a \textbf{one-sample proportion z-test}. \\
+
+			\noindent As mentioned in Section~\ref{sec:proportion_hypothesis}, our null hypothesis is that the proportion of old trams 
+			during rush hours is equal to the proportion of old trams during non-rush hours. \\
+
+			\noindent The reason we did not use a two-sample proportion z-test is because these two proportions are 
+			\textit{not independent} of each other. Knowing the proportion of old trams automatically 
+			determines the proportion of new trams, and vice versa, meaning the degrees of freedom is effectively one. \\
+			\newpage
+
+			\noindent Let us denote:
+			\begin{itemize}
+					\item \( P_{\text{old}} \) = proportion of old trams
+					\item \( P_{\text{new}} \) = proportion of new trams
+			\end{itemize}
+
+			Since a tram is either old or new:
+			\[
+			P_{\text{old}} = 1 - P_{\text{new}}
+			\]
+
+			\noindent The null hypothesis \( H_0 \) is that the proportion of old trams is the same in both conditions:
+			\[
+			P_{\text{old}} = P_{\text{new}}
+			\]
+
+			\noindent Substituting using \( P_{\text{old}} = 1 - P_{\text{new}} \), we get:
+			\[
+			1 - P_{\text{new}} = 1 - P_{\text{new}}
+			\Rightarrow P_{\text{new}} = P_{\text{new}}
+			\]
+
+			\noindent Therefore, for both the old and new tram proportions to be equal:
+			\[
+			P_{\text{new}} = \frac{1}{2} = 0.5 = 50\%
+			\]
+
+			\noindent Thus, testing whether the proportion is different from 50\% using a 
+			one-sample proportion z-test is both valid and sufficient. \\ 
+
+			\noindent The new hypothesis can be stated as: 
+			\begin{align*}
+				H_0: P_{\text{new}} &= 0.5 \\
+				H_a: P_{\text{new}} &\neq 0.5
+			\end{align*}
+
+			\noindent We will also pick a significance level of \( \alpha = 0.05 \) for our test. \\
+
+			After performing the one-sample proportion z-test these are the values we got:
+			\begin{itemize}
+				\item \textbf{Test Statistic:} \( z = -1.095 \)
+				\item \textbf{p-value:} \( p = 0.273 \)
+			\end{itemize}
+
+			\noindent Since the p-value \( 0.273 \) is greater than our significance level \( \alpha = 0.05 \), 
+			we \textbf{fail} to reject the null hypothesis.
+		
+		\subsection{Average Tram Wait Time (Overall)}
+			\noindent To test the hypothesis regarding the average tram wait time, we used a \textbf{one-sample t-test}. \\
+
+			\noindent As mentioned in Section~\ref{sec:wait_time_hypothesis}, our null hypothesis is that the average tram wait time is 4 minutes. \\
+
+			\noindent The null and alternative hypotheses can be stated as:
+			\begin{align*}
+				H_0: \mu &= 4 \\
+				H_a: \mu &\neq 4
+			\end{align*}
+
+			\noindent We will also pick a significance level of \( \alpha = 0.05 \) for our test. \\
+
+			After performing the one-sample t-test these are the values we got:
+			\begin{itemize}
+				\item \textbf{Sample Mean:} \( \bar{x} = 4.421 \)
+				\item \textbf{T-Statistic:} \( T = 1.358 \)
+				\item \textbf{p-value:} \( p = 0.177 \)
+			\end{itemize}
+
+			\noindent We fail to reject the null hypothesis $H_0$ since the p-value \( 0.177 \) is greater than our 
+			significance level \( \alpha = 0.05 \). \\
+
+		\subsection{Average Wait Time: Rush vs. Non-Rush Hours}
+			\noindent To test the hypothesis regarding the average wait time during rush hours vs. non-rush hours, 
+			we used a \textbf{two-sample t-test}. \\
+
+			\noindent As mentioned in Section~\ref{sec:wait_time_rush_non_rush_hypothesis}, 
+			our null hypothesis is that the average wait time is the same during rush and non-rush hours. \\
+
+			\noindent The null and alternative hypotheses can be stated as:
+			\begin{align*}
+				H_0: \mu_{\text{rush}} &= \mu_{\text{non-rush}} \\
+				H_a: \mu_{\text{rush}} &\neq \mu_{\text{non-rush}}
+			\end{align*}
+
+			\noindent We will also pick a significance level of \( \alpha = 0.05 \) for our test. \\
+
+			After performing the two-sample t-test these are the values we got:
+			\begin{itemize}
+				\item \textbf{Rush Hour Mean:} \( \bar{x}_{\text{rush}} = 4.406 \)
+				\item \textbf{Non-Rush Hour Mean:} \( \bar{x}_{\text{non-rush}} = 4.434 \)
+				\item \textbf{T-Statistic:} \( T = -0.045 \)
+				\item \textbf{p-value:} \( p = 0.964 \)
+			\end{itemize}
+
+			\vspace{1mm}
+			\noindent Since the p-value \( 0.964 \) is greater than our significance level \( \alpha = 0.05 \), 
+			we \textbf{fail} to reject the null hypothesis $H_0$ and conclude that there is no significant difference in average
+			wait times between rush and non-rush hours.
+
+		\subsection{Tram Type Distribution by Time of Day}
+			\noindent To test the hypothesis regarding the distribution of tram types by time of day, 
+			we used a \textbf{Chi-Squared Test for Independence}. \\
+
+			\noindent As mentioned in Section~\ref{sec:tram_type_distribution_hypothesis}, 
+			our null hypothesis is that the time of day does not significantly affect the distribution of tram types. \\
+
+			\noindent The null and alternative hypotheses can be stated as:
+			\begin{align*}
+				H_0: \text{Time of day} &\text{ does not affect tram type distribution} \\
+				H_a: \text{Time of day} &\text{ affects tram type distribution}
+			\end{align*}
+
+			\noindent We will also pick a significance level of \( \alpha = 0.05 \) for our test. \\
+
+			After performing the Chi-Squared Test for Independence these are the values we got:
+			\begin{itemize}
+				\item \textbf{Chi-Squared Statistic:} \( \chi^2 = 0.264 \)
+				\item \textbf{p-value:} \( p = 0.607 \)
+				\item \textbf{Degrees of Freedom:} \( df = 1 \)
+			\end{itemize}
+
+			\vspace{1mm}
+			\noindent Since the p-value \( 0.607 \) is greater than our significance level \( \alpha = 0.05 \), 
+			we \textbf{fail} to reject the null hypothesis $H_0$ and conclude that the time of day does not 
+			significantly affect the distribution of tram types. \\
+
+	\newpage
 	\begin{appendices}
 		\section{CSV Dataset Contents}
 		\label{sec:rawdata}
@@ -335,69 +487,58 @@
 		\label{sec:power_analysis}
 
 		\subsection*{Python Code Used for Power Curve}
-		\begin{lstlisting}[style=pythonstyle, caption={Power Curve Python Code}, label={lst:power_code}]
-from statsmodels.stats.power import TTestIndPower
-import numpy as np
-import matplotlib.pyplot as plt
+			\lstinputlisting[style=pythonstyle, caption={Proportion Curve Python Code}, label={lst:power_curve}]{Code/PowerCurve.py}	
 
-# Initialize power analysis tool
-analysis = TTestIndPower()
+			\subsection*{Explanation of Power Calculation}
 
-# Significance level
-alpha = 0.05
+				The statistical power of a test is defined as:
 
-# Sample sizes from dataset
-n1 = df[df['rush_hour'] == True].shape[0]
-n2 = df[df['rush_hour'] == False].shape[0]
+				\[
+				\text{Power} = 1 - \beta
+				\]
 
-# Effect sizes from 0 to 2 (Cohen's d)
-effect_sizes = np.linspace(0, 2, 100)
+				where:
+				\begin{itemize}
+						\item \( \beta \) is the probability of a Type II error (failing to reject the null hypothesis when it is false).
+						\item \( \alpha \) is the significance level (probability of a Type I error).
+						\item Power is the probability that the test correctly rejects the null hypothesis when a true difference exists.
+				\end{itemize}
 
-# Compute statistical power for each effect size
-powers = analysis.power(effect_size=effect_sizes, nobs1=n1, ratio=n2/n1, alpha=alpha, alternative='two-sided')
+				The effect size used here is \textbf{Cohen's \( d \)}, calculated as:
 
-# Plotting the power curve
-plt.figure(figsize=(8,5))
-plt.plot(effect_sizes, powers, color='blue')
-plt.axhline(0.8, color='red', linestyle='--', label='80% power')
-plt.title('Power Curve (Type II Error Analysis)')
-plt.xlabel("Effect Size (Cohen's d)")
-plt.ylabel('Power (1 - beta)')
-plt.grid(True)
-plt.legend()
-plt.savefig("Plot_PowerCurve.pdf", format='pdf')
-plt.show()
-		\end{lstlisting}
+				\[
+				d = \frac{|\mu_1 - \mu_2|}{\sigma_{\text{pooled}}}
+				\]
 
-		\subsection*{Explanation of Power Calculation}
+				with \( \mu_1 \) and \( \mu_2 \) representing the means of tram wait times during rush hour and non-rush hour respectively, and \( \sigma_{\text{pooled}} \) being the pooled standard deviation.
 
-			The statistical power of a test is defined as:
+			\subsection*{Purpose of the Power Curve}
 
-			\[
-			\text{Power} = 1 - \beta
-			\]
+				This power curve allows us to visualize how sensitive our statistical test is to differences in tram wait times. It shows the probability of detecting a real difference (if it exists) based on various hypothetical effect sizes. A commonly accepted threshold for adequate power is 0.8, meaning there's an 80\% chance the test will detect a true effect.
 
-			where:
-			\begin{itemize}
-					\item \( \beta \) is the probability of a Type II error (failing to reject the null hypothesis when it is false).
-					\item \( \alpha \) is the significance level (probability of a Type I error).
-					\item Power is the probability that the test correctly rejects the null hypothesis when a true difference exists.
-			\end{itemize}
+				\bigskip
+				The analysis helps ensure that our sample size is sufficient to make confident conclusions regarding tram service differences during rush hours.
+		
 
-			The effect size used here is \textbf{Cohen's \( d \)}, calculated as:
+		\newpage
+		\section{Hypothesis Test Code}
+		\label{sec:hypothesis_test_code}
+		  \noindent In this Appendix, we provide the Python code used to perform the hypothesis tests for both the average tram wait time and the proportion of old vs. new trams. The code is structured to be clear and easy to follow, with comments explaining each step of the process.
 
-			\[
-			d = \frac{|\mu_1 - \mu_2|}{\sigma_{\text{pooled}}}
-			\]
+			\subsection*{Proportion of Old vs. New Trams}
+				\lstinputlisting[style=pythonstyle, caption={Proportion Test Code}, label={lst:power_curve}]{Code/ProportionTest.py}	
 
-			with \( \mu_1 \) and \( \mu_2 \) representing the means of tram wait times during rush hour and non-rush hour respectively, and \( \sigma_{\text{pooled}} \) being the pooled standard deviation.
+			\newpage
+			\subsection*{Average Tram Wait Time (Overall)}
+				\lstinputlisting[style=pythonstyle, caption={Average Wait Time Test Code}, label={lst:average_wait_time}]{Code/AverageWaitTimeOverallTest.py}
 
-		\subsection*{Purpose of the Power Curve}
+			\newpage
+			\subsection*{Average Wait Time: Rush vs. Non-Rush Hours}
+				\lstinputlisting[style=pythonstyle, caption={Rush vs Non-Rush Wait Time Test Code}, label={lst:rush_vs_non_rush}]{Code/AverageWaitTimeRushVsNonRush.py}
 
-			This power curve allows us to visualize how sensitive our statistical test is to differences in tram wait times. It shows the probability of detecting a real difference (if it exists) based on various hypothetical effect sizes. A commonly accepted threshold for adequate power is 0.8, meaning there's an 80\% chance the test will detect a true effect.
-
-			\bigskip
-			The analysis helps ensure that our sample size is sufficient to make confident conclusions regarding tram service differences during rush hours.
+			\newpage
+			\subsection*{Tram Type Distribution by Time of Day}
+				\lstinputlisting[style=pythonstyle, caption={Tram Type Distribution Test Code}, label={lst:tram_type_distribution}]{Code/TramTypeDistributionTest.py}
 	\end{appendices}
 
 \end{document}
