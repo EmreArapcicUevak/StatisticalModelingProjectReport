@@ -329,67 +329,90 @@
 
 
 	\section{Statistical Analysis and Hypothesis Testing}
-				This Section will cover the statistical analysis and hypothesis testing we performed on the data collected. 
-				The tests were performed using Python, and the code can be found in Appendix~\ref{sec:hypothesis_test_code}. \\
+		This Section will cover the statistical analysis and hypothesis testing we performed on the data collected. 
+		The tests were performed using Python, and the code can be found in Appendix~\ref{sec:hypothesis_test_code}. \\
 
-				\subsection{Proportion of Old vs. New Trams}
-					\noindent To test the hypothesis regarding the proportion of old vs. new trams during 
-					rush and non-rush hours, we used a \textbf{one-sample proportion z-test}. \\
+		\subsection{Proportion of Old vs. New Trams}
+			\noindent To test the hypothesis regarding the proportion of old vs. new trams during 
+			rush and non-rush hours, we used a \textbf{one-sample proportion z-test}. \\
 
-					\noindent As mentioned in Section~\ref{sec:proportion_hypothesis}, our null hypothesis is that the proportion of old trams 
-					during rush hours is equal to the proportion of old trams during non-rush hours. \\
+			\noindent As mentioned in Section~\ref{sec:proportion_hypothesis}, our null hypothesis is that the proportion of old trams 
+			during rush hours is equal to the proportion of old trams during non-rush hours. \\
 
-					\noindent The reason we did not use a two-sample proportion z-test is because these two proportions are 
-					\textit{not independent} of each other. Knowing the proportion of old trams automatically 
-					determines the proportion of new trams, and vice versa, meaning the degrees of freedom is effectively one. \\
-					\newpage
+			\noindent The reason we did not use a two-sample proportion z-test is because these two proportions are 
+			\textit{not independent} of each other. Knowing the proportion of old trams automatically 
+			determines the proportion of new trams, and vice versa, meaning the degrees of freedom is effectively one. \\
+			\newpage
 
-					\noindent Let us denote:
-					\begin{itemize}
-							\item \( P_{\text{old}} \) = proportion of old trams
-							\item \( P_{\text{new}} \) = proportion of new trams
-					\end{itemize}
+			\noindent Let us denote:
+			\begin{itemize}
+					\item \( P_{\text{old}} \) = proportion of old trams
+					\item \( P_{\text{new}} \) = proportion of new trams
+			\end{itemize}
 
-					Since a tram is either old or new:
-					\[
-					P_{\text{old}} = 1 - P_{\text{new}}
-					\]
+			Since a tram is either old or new:
+			\[
+			P_{\text{old}} = 1 - P_{\text{new}}
+			\]
 
-					\noindent The null hypothesis \( H_0 \) is that the proportion of old trams is the same in both conditions:
-					\[
-					P_{\text{old}} = P_{\text{new}}
-					\]
+			\noindent The null hypothesis \( H_0 \) is that the proportion of old trams is the same in both conditions:
+			\[
+			P_{\text{old}} = P_{\text{new}}
+			\]
 
-					\noindent Substituting using \( P_{\text{old}} = 1 - P_{\text{new}} \), we get:
-					\[
-					1 - P_{\text{new}} = 1 - P_{\text{new}}
-					\Rightarrow P_{\text{new}} = P_{\text{new}}
-					\]
+			\noindent Substituting using \( P_{\text{old}} = 1 - P_{\text{new}} \), we get:
+			\[
+			1 - P_{\text{new}} = 1 - P_{\text{new}}
+			\Rightarrow P_{\text{new}} = P_{\text{new}}
+			\]
 
-					\noindent Therefore, for both the old and new tram proportions to be equal:
-					\[
-					P_{\text{new}} = \frac{1}{2} = 0.5 = 50\%
-					\]
+			\noindent Therefore, for both the old and new tram proportions to be equal:
+			\[
+			P_{\text{new}} = \frac{1}{2} = 0.5 = 50\%
+			\]
 
-					\noindent Thus, testing whether the proportion is different from 50\% using a 
-					one-sample proportion z-test is both valid and sufficient. \\ 
+			\noindent Thus, testing whether the proportion is different from 50\% using a 
+			one-sample proportion z-test is both valid and sufficient. \\ 
 
-					\noindent The new hypothesis can be stated as: 
-					\begin{align*}
-						H_0: P_{\text{new}} &= 0.5 \\
-						H_a: P_{\text{new}} &\neq 0.5
-					\end{align*}
+			\noindent The new hypothesis can be stated as: 
+			\begin{align*}
+				H_0: P_{\text{new}} &= 0.5 \\
+				H_a: P_{\text{new}} &\neq 0.5
+			\end{align*}
 
-					\noindent We will also pick a significance level of \( \alpha = 0.05 \) for our test. \\
+			\noindent We will also pick a significance level of \( \alpha = 0.05 \) for our test. \\
 
-					After performing the one-sample proportion z-test these are the values we got:
-					\begin{itemize}
-						\item \textbf{Test Statistic:} \( z = -1.095 \)
-						\item \textbf{p-value:} \( p = 0.273 \)
-					\end{itemize}
+			After performing the one-sample proportion z-test these are the values we got:
+			\begin{itemize}
+				\item \textbf{Test Statistic:} \( z = -1.095 \)
+				\item \textbf{p-value:} \( p = 0.273 \)
+			\end{itemize}
 
-					\noindent Since the p-value \( 0.273 \) is greater than our significance level \( \alpha = 0.05 \), 
-					we \textbf{fail} to reject the null hypothesis.
+			\noindent Since the p-value \( 0.273 \) is greater than our significance level \( \alpha = 0.05 \), 
+			we \textbf{fail} to reject the null hypothesis.
+		
+		\subsection{Average Tram Wait Time (Overall)}
+			\noindent To test the hypothesis regarding the average tram wait time, we used a \textbf{one-sample t-test}. \\
+
+			\noindent As mentioned in Section~\ref{sec:wait_time_hypothesis}, our null hypothesis is that the average tram wait time is 4 minutes. \\
+
+			\noindent The null and alternative hypotheses can be stated as:
+			\begin{align*}
+				H_0: \mu &= 4 \\
+				H_a: \mu &\neq 4
+			\end{align*}
+
+			\noindent We will also pick a significance level of \( \alpha = 0.05 \) for our test. \\
+
+			After performing the one-sample t-test these are the values we got:
+			\begin{itemize}
+				\item \textbf{Sample Mean:} \( \bar{x} = 4.421 \)
+				\item \textbf{T-Statistic:} \( T = 1.358 \)
+				\item \textbf{p-value:} \( p = 0.177 \)
+			\end{itemize}
+
+			\noindent We fail to reject the null hypothesis $H_0$ since the p-value \( 0.177 \) is greater than our 
+			significance level \( \alpha = 0.05 \). \\
 
 	\begin{appendices}
 		\section{CSV Dataset Contents}
